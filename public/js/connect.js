@@ -38,21 +38,22 @@ $(function() {
       localStorage.store = store;
       localStorage.thumbnail = thumbnail;
 
-      socket.emit('connect', {
+
+      socket.on('relayconnected', function(version) {
+        $('#connect').hide();
+        $('#center, #input, #top').show();
+
+        console.log('relayconnected');
+        socket.emit('relayinit');
+      });
+     
+      socket.emit('relayconnect', {
         host: host,
         port: port,
         ssl: ssl,
         password: password
-      }, function(version) {
-        _gaq.push(['_setCustomVar', 1, 'WeeChat version', version]);
-        _gaq.push(['_trackEvent', 'WeeChat', 'WeeChat version']);
-
-        $('#connect').hide();
-        $('#center, #input, #top').show();
-
-        socket.emit('init');
       });
-
+      
       return false;
     });
   });

@@ -4,6 +4,10 @@ $(function() {
   buffers = new BufferCollection();
   inputView = new InputView();
 
+  Buffer.isBuffer = function isBuffer(b) {
+    return b instanceof Buffer;
+  };
+
   function addBuffer(buffer) {
     var server = servers.get(buffer.server);
     if (!server) {
@@ -32,9 +36,10 @@ $(function() {
     $('#bufferlist a').tab('show');
   }
 
-  socket = io.connect();
+  socket = io();
 
   socket.on('open:buffer', function(buffer) {
+    console.log('open buffer received');
     addBuffer(buffer);
   });
 
@@ -54,7 +59,7 @@ $(function() {
     else if (type === 'part') users.remove(user);
   });
 
-  socket.on('error', function(err) {
+  socket.on('relayerror', function(err) {
     $('#error').text(err).show();
   });
 
