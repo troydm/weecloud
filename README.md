@@ -3,12 +3,19 @@ WeeCloud
 
 Node.js web interface for WeeChat Relay
 
+NOTE: this is a fork with folowing modifications:
+* Dark interface
+* Socket.io updated to latest 1.3.7    
+* Latest weechat.js is now part of it instead of being separate module
+![weecloud dark](http://i.imgur.com/rHPG2km.png)
+    
+
 Usage
 ---
 
 **WeeChat**
 
-Require [WeeChat 0.3.7] or later (http://www.weechat.org/download/).   
+Require [WeeChat 1.0] or later (http://www.weechat.org/download/).   
 Start WeeChat Relay Protocol:  
 
     /set relay.network.password test
