@@ -1,3 +1,55 @@
+body {
+    color: #FFF;
+    background-color: #1a1a1a;
+}
+
+a, a:hover, a:focus {
+    color: #68C;
+    text-decoration: none;
+}
+
+.muted {
+    color: #999;
+}
+
+.label {
+    background-color: #000;
+}
+
+pre {
+    background-color: #555;
+}
+
+.badge {
+    background-color: #000;
+}
+
+.alert-success {
+    background-color: #555;
+}
+
+.tabs-left > .nav-tabs > li {
+    background-color: #222;
+}
+
+.nav-tabs > .active > a, .nav-tabs > .active > a:hover {
+    background-color: #333;
+}
+
+.nav-tabs > li > a:hover {
+    background-color: #222;
+}
+
+.nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus {
+    color: #DDD;
+    background-color: #1a1a1a;
+}
+
+.select2-drop {
+    color: #ddd;
+    background-color: #333;
+}
+
 #center {
   top: 28px;
   left: 0;
@@ -27,18 +79,22 @@
 #input {
   position: absolute;
   bottom: 0;
-  width: 50%;
-  margin-left: 5%;
+  width: 100%;
 }
 
 #input input {
-  width: 100%;
+  width: 99%;
+}
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+    color: #fff;
+    background-color: #222;
 }
 
 .message {
   word-wrap: break-word;
   border-top: 1px solid #eee;
   padding: 6px 0 6px 0;
+  color: #ddd;
 }
 
 #dropdown-buffers {
@@ -66,7 +122,7 @@
   max-width: 300px;
   padding: 19px 29px 29px;
   margin: 40px auto 20px;
-  background-color: #fff;
+  background-color: #333;
   border: 1px solid #e5e5e5;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -95,4 +151,60 @@
 .gh li {
   float: left;
   width: 70px;
+}
+
+.select2-container .select2-choice {
+    background-color: #333;
+}
+
+.select2-container .select2-choice span {
+    color: #FFF;
+    background-color: #333;
+}
+.select2-container-active .select2-choice, .select2-container-active .select2-choices, .select2-search, .select2-search input {
+    color: #fff;
+    background-color: #333;
+    background-image:-webkit-gradient(linear,left bottom,left top,color-stop(0,#333),color-stop(0.5,#000));
+    background-backgroundimage:-webkit-linear-gradient(center bottom,#333 0,#000 50%);
+    backgroundimagend-image:-moz-linear-gradient(center bottom,#333 0,#000 50%);
+    backgroundimagendnd-image:-o-linear-gradient(bottom,#333 0,#000 50%);
+    background-image:image-ms-linear-gradient(top,#000 0,#333 50%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#333333', GradientType=0);
+    background-image:linear-gradient(top,#000 0,#333 50%)
+}
+
+.select2-container-active {
+    background-color: #333;
+}
+
+.btn-primary {
+    color:#fff;
+    border: 1px solid #333;
+    background-image:-moz-linear-gradient(to bottom,#555,#555);
+}
+
+.btn-primary:hover,.btn-primary:focus,.btn-primary:active,.btn-primary.active,.btn-primary.disabled,.btn-primary[disabled] {
+    color:#fff;
+    background-color: #333;
+    background-image: -moz-linear-gradient(center bottom , #333 0px, #333 50%);
+}
+
+.btn-primary:active,.btn-primary.activeive {
+    background-image: -moz-linear-gradient(center bottom , #333 0px, #333 50%);
+}
+
+.select2-container .select2-choice {
+    background-image: -moz-linear-gradient(center bottom , #333 0px, #333 50%);
+}
+
+.select2-search input {
+    background-image: none;
+}
+
+.select2-results .select2-no-results {
+    background: none;
+}
+.select2-results .select2-highlighted {
+    background: #555;
+    color: #FFF;
 }
