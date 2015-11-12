@@ -8,7 +8,11 @@ Server = Backbone.RelationalModel.extend({
       key: 'livesIn',
       includeInJSON: 'id'
     }
-  }]
+  }],
+
+  getBuffer: function(bufferid){
+      return this.get('buffers').get(bufferid);  
+  }
 });
 
 Buffer = Backbone.RelationalModel.extend({

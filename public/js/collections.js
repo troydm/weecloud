@@ -1,5 +1,13 @@
 ServerCollection = Backbone.Collection.extend({
-  model: Server
+  model: Server,
+  findServerByBuffer: function(buffer){
+      var found = null;
+      this.each(function(server){
+          if(server.getBuffer(buffer) !== undefined)                          
+            found = server;
+      });
+      return found;
+  }
 });
 
 BufferCollection = Backbone.Collection.extend({

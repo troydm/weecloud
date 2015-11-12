@@ -8,6 +8,21 @@ $(function() {
     return b instanceof Buffer;
   };
 
+  function removeBuffer(buffer){
+    var server = servers.findServerByBuffer(buffer);
+    server.get('buffers').remove(server.get('buffers').get(buffer));
+    buffers.remove(buffers.get(buffer));
+
+    $("optgroup[label='"+server.id+"'] > option[value='"+buffer+"']").remove();
+    var li = $("#bufferlist ul li > a[href='#"+buffer+"']").parent();
+    var active = li.attr('class') == 'active';
+    li.remove();
+
+    if(active){
+        //$("#buffers > div").empty();    
+    }
+  }
+
   function addBuffer(buffer) {
     var server = servers.get(buffer.server);
     if (!server) {
@@ -41,6 +56,11 @@ $(function() {
   socket.on('open:buffer', function(buffer) {
     console.log('open buffer received');
     addBuffer(buffer);
+  });
+
+  socket.on('close:buffer', function(buffer) {
+    console.log('close buffer received');
+    removeBuffer(buffer);
   });
 
   socket.on('message', function(message) {

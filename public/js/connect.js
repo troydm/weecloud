@@ -43,7 +43,7 @@ $(function() {
         $('#connect').hide();
         $('#center, #input, #top').show();
 
-        console.log('relayconnected');
+        console.log('relay connected');
         socket.emit('relayinit');
       });
      
